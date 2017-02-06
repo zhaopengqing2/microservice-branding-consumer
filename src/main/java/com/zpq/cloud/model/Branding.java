@@ -411,4 +411,12 @@ public class Branding {
     public void setLastModifiedUserId(Long lastModifiedUserId) {
         this.lastModifiedUserId = lastModifiedUserId;
     }
+
+    public Branding(String name, Long id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public Branding() {
+    }
 }

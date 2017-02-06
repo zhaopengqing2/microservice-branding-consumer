@@ -12,3 +12,27 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+# precedence 1. property file 2. class 3. default
+
+microservice-branding-provider:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+#use ribbon without eureka
+#ribbon:
+#  eureka:
+#    enable: false
+#microservice-branding-provider:
+#  ribbon:
+#    listOfServers: localhost:7800
+
+logging:
+  level:
+    com.zpq.cloud.client.FeignBrandingClient: DEBUG
+
+#fix timeout issue
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000
+#hystrix.command.default.execution.timeout.enable: false
+
+# circuit breaker pattern
