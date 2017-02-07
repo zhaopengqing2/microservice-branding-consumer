@@ -34,5 +34,6 @@ logging:
 #fix timeout issue
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000
 #hystrix.command.default.execution.timeout.enable: false
+#feign.hystrix.enabled: false
 
 # circuit breaker pattern

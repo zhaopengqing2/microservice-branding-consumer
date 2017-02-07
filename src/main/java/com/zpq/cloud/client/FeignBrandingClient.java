@@ -8,7 +8,7 @@ import feign.RequestLine;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "microservice-branding-provider", configuration = FeignConfiguration.class)
+@FeignClient(name = "microservice-branding-provider", configuration = FeignConfiguration.class, fallback = HystrixClientFallback.class)
 //@FeignClient(name = "name", url = "http://localhost:8761/", configuration = AuthFeignConfiguration.class)
 public interface FeignBrandingClient {
 
